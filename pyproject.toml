@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "apprentice-harness"
+version = "0.1.0"
+description = "Tacit-knowledge elicitation harness: an apprentice layer around the assistant employees already use."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Pleias" }]
+dependencies = ["pyyaml>=6.0"]
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.0"]
+
+[project.scripts]
+apprentice = "apprentice.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["apprentice"]
